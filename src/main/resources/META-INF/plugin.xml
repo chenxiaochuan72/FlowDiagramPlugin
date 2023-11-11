@@ -1,18 +1,35 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.chenxiaochuan72.plugin</id>
-    <name>plugin Template</name>
-    <vendor>chenxiaochuan72</vendor>
+    <vendor email="1623859508@qq.com">itxiaodongbei</vendor>
+    <id>JavaFlowDiagram</id>
 
+    <name>JavaFlowDiagram</name>
+    <description><![CDATA[
+<h3>JavaFlowDiagram for IntelliJ IDEA</h3>
+<p>with this plugin, you can<br>
++ generate Simple flow Diagram.<br>
++ Select whether to add the common method by setting<br>
++ Export the diagram as image.<br>
++ Export the diagram as image.<br>
+]]></description>
+    <version>1.2.2</version>
+    <idea-version since-build="231.*"/>
     <depends>com.intellij.modules.platform</depends>
-
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.chenxiaochuan72.plugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow id="PlantUMLToolWindow"
+                    anchor="right"
+                    canCloseContents="true"
+                    icon="/icons/flowdiagram.svg"
+                    factoryClass="com.it.xiaodongbei.flowdiagram.window.PlantUMLToolWindowFactory"
+        />
     </extensions>
+    <actions>
+        <action id="GenAPIDocAction" class="com.it.xiaodongbei.flowdiagram.action.JavaFlowDiagramAction"
+                icon="/icons/flowdiagram.svg"
+                text="FlowDiagram">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
 
-    <applicationListeners>
-        <listener class="com.github.chenxiaochuan72.plugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    </actions>
 </idea-plugin>
