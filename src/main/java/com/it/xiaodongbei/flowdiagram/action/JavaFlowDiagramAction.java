@@ -76,7 +76,7 @@ public class JavaFlowDiagramAction extends AnAction {
         ToolWindow toolWindow = ToolWindowManager.getInstance(result.project).getToolWindow("PlantUMLToolWindow");
         // 设置内容
         toolWindow.getContentManager().removeAllContents(true); // 清除之前的内容
-        ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
+        ContentFactory contentFactory = ContentFactory.getInstance();
         Content content = contentFactory.createContent(mainJPanel, "", false);
         toolWindow.getContentManager().addContent(content);
 
