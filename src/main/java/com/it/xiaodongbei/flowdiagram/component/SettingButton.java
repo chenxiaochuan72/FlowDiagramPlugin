@@ -16,7 +16,7 @@ public class SettingButton extends JButton {
     private boolean toolWindowCreated=false;
 
     public SettingButton() {
-        this.setIcon(IconLoader.findIcon("/icons/settings.svg"));
+        this.setIcon(IconLoader.getIcon("/icons/settings.svg", SettingButton.class));
         this.setToolTipText("settings");
         // 添加动作监听器
         initButton();
@@ -40,7 +40,7 @@ public class SettingButton extends JButton {
                         "Settings", // 标题
                         JOptionPane.YES_NO_OPTION, // 选项类型
                         JOptionPane.QUESTION_MESSAGE, // 消息类型
-                        IconLoader.findIcon("/icons/settings.svg"), // 使用的图标
+                        IconLoader.getIcon("/icons/settings.svg", SettingButton.class), // 使用的图标
                         options, // 选项
                         toolWindowCreated ? options[0] : options[1] // 默认选择当前值
                 );

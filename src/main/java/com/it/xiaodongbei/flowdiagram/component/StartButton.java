@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 
 public class StartButton extends JButton {
 
-    private final Icon startIcon= IconLoader.findIcon("/icons/play.svg");
+    private final Icon startIcon= IconLoader.getIcon("/icons/play.svg", StartButton.class);
     private final Project project;
     private final AnActionEvent event;
 

@@ -29,7 +29,7 @@ public class ExportButton extends JButton {
         this.project = proj;
         this.event = evt;
         this.plantUMLImage = plantUMLPanel;
-        this.setIcon(IconLoader.findIcon("/icons/save.svg"));
+        this.setIcon(IconLoader.getIcon("/icons/save.svg", ExportButton.class));
         this.setToolTipText("Export");
         addActionListener(createStartActionListener());
 
